@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE cricketPerformance [
+	<!ELEMENT cricketPerformance (player)+>
+	<!ELEMENT player (opposition)+>
+	<!ELEMENT opposition (match)+>
+	<!ELEMENT match EMPTY>
+	<!ATTLIST player
+		name ID	#REQUIRED
+		team	(AUS|NZ|IND|PAK|BAN|ENG|WI|SL|RSA)	#REQUIRED
+	>
+	<!ATTLIST opposition
+		team	(AUS|NZ|IND|PAK|BAN|ENG|WI|SL|RSA)	#REQUIRED
+	>
+	<!ATTLIST match
+		score	CDATA	#REQUIRED
+		out	(yes|no)	#REQUIRED
+	>
+]>
+
+<cricketPerformance>
+	<!-- list of players below with teams they played for !-->
+	<player name="kane_williamson" team="NZ">
+		<!-- teams they played against !-->
+		<opposition team="IND">
+			<!-- scores they got from each match and if their score is out or not !-->
+			<match score="131" out="yes"/>
+			<match score="4" out="yes"/>
+			<match score="69" out="yes"/>
+			<match score="0" out="yes"/>
+			<match score="8" out="yes"/>
+		</opposition>
+		<opposition team="PAK">
+			<match score="50" out="yes"/>
+		</opposition>
+	</player>
+	<player name="steve_smith" team="AUS">
+		<opposition team="PAK">
+			<match score="1" out="yes"/>
+			<match score="12" out="yes"/>
+			<match score="10" out="yes"/>
+			<match score="77" out="yes"/>
+		</opposition>
+		<opposition team="ENG">
+			<match score="7" out="yes"/>
+			<match score="36" out="yes"/>
+			<match score="6" out="yes"/>
+			<match score="38" out="yes"/>
+			<match score="18" out="yes"/>
+			<match score="54" out="no"/>
+		</opposition>
+	</player>
+	<player name="virat_kohli" team="IND">
+		<opposition team="WI">
+			<match score="4" out="yes"/>
+			<match score="15" out="yes"/>
+		</opposition>
+	</player>
+	<player name="sachin_tendulkar" team="IND">
+		<opposition team="PAK">
+			<match score="15" out="yes"/>
+			<match score="59" out="yes"/>
+		</opposition>
+	</player>
+</cricketPerformance>

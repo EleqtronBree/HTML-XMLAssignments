@@ -1,0 +1,38 @@
+<?xml version ="1.0"?>
+
+<!DOCTYPE extraSolarPlanets [
+	<!-- define the elements and children that belong to it !-->
+	<!ELEMENT extraSolarPlanets (star+)>
+	<!ELEMENT star (planet*)>
+	<!ELEMENT planet EMPTY>
+	
+	<!-- list valid attributes and their type in each element !-->
+	<!ATTLIST star
+		name ID #REQUIRED
+		distance CDATA #REQUIRED>
+	<!ATTLIST planet
+		name ID #REQUIRED
+		habitable (yes|no|maybe) #REQUIRED
+		orbital_distance CDATA #REQUIRED
+		orbital_period CDATA #REQUIRED>
+]>
+
+<extraSolarPlanets>
+	<!-- list of stars and its distance from us !-->
+	<star name="Kepler_186" distance="492">
+		<!-- planets in the star Kepler_186 !-->
+		<planet name="Kepler_186b" habitable ="no" orbital_distance ="0.0378" orbital_period="3.8868"/>
+		<planet name="Kepler_186c" habitable ="no" orbital_distance ="0.0574" orbital_period="7.2673"/>
+		<planet name="Kepler_186d" habitable ="no" orbital_distance ="0.0861" orbital_period="13.343"/>
+		<planet name="Kepler_186e" habitable ="no" orbital_distance ="0.1216" orbital_period="22.408"/>
+		<planet name="Kepler_186f" habitable ="yes" orbital_distance ="0.393" orbital_period="129.95"/>
+	</star>
+	<star name="Kepler_22" distance="620">
+		<!-- a planet in the star Kepler_22 !-->
+		<planet name="Kepler_22b" habitable ="yes" orbital_distance ="0.849" orbital_period="289.86"/>
+	</star>
+	<star name="HD_85512" distance="36.4">
+		<!-- a planet in the star HD_85512 !-->
+		<planet name="HD_85512b" habitable ="maybe" orbital_distance ="0.26" orbital_period="58.43"/>
+	</star>
+</extraSolarPlanets>
